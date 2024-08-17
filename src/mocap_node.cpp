@@ -102,18 +102,20 @@ public:
         new RigidBodyPublishDispatcher(nh,
                                        dataModel.getNatNetVersion(),
                                        publisherConfigurations));
-      ROS_INFO("Initialization complete");
+      ROS_WARN("Initialization complete");
       initialized = true;
     }
     else
     {
-      ROS_INFO("Initialization incomplete");
+      ROS_WARN("Initialization incomplete");
       initialized = false;
     }
   };
 
   void run()
   {
+    ROS_WARN("Running...");
+
     while (ros::ok())
     {
       if (initialized)

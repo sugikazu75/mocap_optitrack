@@ -544,7 +544,7 @@ void MessageDispatcher::dispatch(
     }
     else
     {
-      ROS_WARN("Client has not received server info request. Parsing data message aborted.");
+      ROS_WARN_THROTTLE(1, "Client has not received server info request. Parsing data message aborted.");
     }
     return;
   }
@@ -553,9 +553,9 @@ void MessageDispatcher::dispatch(
   {
     natnet::ServerInfoMessage msg;
     msg.deserialize(msgBuffer, dataModel);
-    ROS_INFO_ONCE("NATNet Version : %s", 
+    ROS_WARN_THROTTLE(1, "NATNet Version : %s",
       dataModel->getNatNetVersion().getVersionString().c_str());
-    ROS_INFO_ONCE("Server Version : %s", 
+    ROS_WARN_THROTTLE(1, "Server Version : %s",
       dataModel->getServerVersion().getVersionString().c_str());
     return;
   }
