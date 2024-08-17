@@ -109,12 +109,12 @@ public:
         new RigidBodyPublishDispatcher(nh,
                                        dataModel.getNatNetVersion(),
                                        publisherConfigurations));
-      ROS_WARN("Initialization complete");
+      ROS_WARN("Initialization is completed.");
       initialized = true;
     }
     else
     {
-      ROS_WARN("Initialization incomplete");
+      ROS_WARN("enableOptitrack is False. Initialization is uncompleted.");
       initialized = false;
     }
   };
