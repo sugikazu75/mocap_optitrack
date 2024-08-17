@@ -197,8 +197,8 @@ void DataFrameMessage::deserialize(
   ROS_DEBUG("Marker set count: %d", numMarkerSets);
   dataFrame->markerSets.resize(numMarkerSets);
 
-  if (NatNetVersion > mocap_optitrack::Version("3.0")) {
-    // version > 3.0: size of all data for this data type (in bytes);
+  if (NatNetVersion > mocap_optitrack::Version("4.0")) {
+    // NatNet version > 4.0: size of all data for this data type (in bytes);
     msgBufferIter += 4;
   }
 
@@ -235,8 +235,8 @@ void DataFrameMessage::deserialize(
   dataFrame->otherMarkers.resize(numUnlabeledMarkers);
   ROS_DEBUG("Unlabled marker count: %d", numUnlabeledMarkers);
 
-  if (NatNetVersion > mocap_optitrack::Version("3.0")) {
-    // version > 3.0: size of all data for this data type (in bytes);
+  if (NatNetVersion > mocap_optitrack::Version("4.0")) {
+    // NatNet version > 4.0: size of all data for this data type (in bytes);
     msgBufferIter += 4;
   }
 
@@ -258,8 +258,8 @@ void DataFrameMessage::deserialize(
   dataFrame->rigidBodies.resize(numRigidBodies);
   ROS_DEBUG("Rigid count: %d", numRigidBodies);
 
-  if (NatNetVersion > mocap_optitrack::Version("3.0")) {
-    // version > 3.0: size of all data for this data type (in bytes);
+  if (NatNetVersion > mocap_optitrack::Version("4.0")) {
+    // NatNet version > 4.0: size of all data for this data type (in bytes);
     msgBufferIter += 4;
   }
 
